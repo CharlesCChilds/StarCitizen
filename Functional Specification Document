@@ -1,0 +1,63 @@
+The goal of the configuration tool is to have an separate tool to experiment with different ship configurations and see the expected results.
+
+
+Requirements:
+
+  1. Ability to select ship chassis
+	2. Ability to select Engine stack
+		a. Ability to select Intake
+		b. Ability to select Modifiers
+		c. Ability to select Engine / Power Source
+		d. Ability to select Thrusters
+	3. Ability to select Upgrade Modules
+	4. Ability to select Weapons
+	5. Ability to see the see the results
+	6. Ability to save/load/edit configurations
+		a. Save to local machine
+		b. Save to cloud (P2)
+		c. Ability to share configurations (P2)
+	7. Ability to view component details (P2)
+	8. Ability to create custom components (P2)
+
+
+
+Framework
+
+Ideally, the tool would be a standalone Windows application that can work offline. A web application may be more accessible to people on different platforms depending if the game will support those different platforms. Another option is to provide a library or web service that provides the functionality and let the community write tools depending on their preferred platform.
+
+
+Data Store
+
+Ideally, all the data would be stored on the local machine to allow offline use but have the ability to update as new content is added. Direct access to a shared database is not recommended, but drops of the database backup could be used by the community to generate the data store. Data could also be exposed via a web service, therefore always being up to date and remove the need for local updates.
+
+
+User Interface
+
+A generic ship form view with the different sections (e.g. engine, engine upgrades, weapon hard points, etc.) represented as either a list or icons for each component. The form view should be on the left 2/3 of the screen with a list that is context sensitive on the right the user can use to select options. 
+
+
+Ship Chassis
+
+The user will select the manufacturer from a drop down menu, which will populate a second drop down menu with models from the selected manufacturer. (May need to have an option for the trim type as well.) After selecting a model, the tool will pre-populate the forms with current specifications for that model, such as weight, number of modifications, number of hard-points and their type, the standard configuration.
+
+
+All other components
+
+The ship form will have a slot/icon for each module option for the selected ship chassis. When the user either selected the module type they want to add or select the slot/icon that represents the module they want to update, the list on the  right will populate with the options that can be filtered either by drill down list or filter flags. When the user selects a component from the list, the details for that component will be displayed in a component details view at the bottom of the list.
+
+Ability to view components
+
+The ability to select a component and pull up the information about that component, such as a picture of it, a detailed description of what it is and what it does and a specifications section with all the details about it. If we are able to build components, it would also be nice to have the bill of materials for the component. If we are able to do research and development on the component, it would also be nice to have what areas we can research. (If research and development is generic and applies to all components in the same way, then no need for it to be listed for each item.)
+
+
+Custom Components
+
+User is able to adjust the characteristics of a standard part and use it in the configuration. The custom components will be listed with the manufacturer set as custom. Ideally, a research and development screen/tab would be available to play with different configurations of a component and will see the results those changes will have on the component's final characteristics.
+
+Results
+
+The weapon results section should have the alpha attack value (the maximum amount of damage that can be done on the first strike with all weapons firing), the damage per second (the average amount of damage that can be done over a length of time), how long the energy reserves will last with all weapons firing, and any other related combat values that are normally generated for the game.
+
+The engine results section should have the top speed of the ship under ideal circumstances, burn rate (amount of fuel used per unit of time), max distance the ship can go before refueling (assuming the destination has a place to refuel, so no turning back), ship's agility (normalized value that represents ship's ability to maneuver), and any other engine related details normally generated for the game.
+
+The sensor results section should have the ship's signature level, ship's sensor strength, ship's sensor range, and any other details related to sensors that is normally generated for the game.
